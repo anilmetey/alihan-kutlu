@@ -2128,18 +2128,36 @@ function renderCMSManageList() {
     const cover = alb.cover || (alb.photos[0] && alb.photos[0].thumb) || '';
     return `
       <div class="cms-list-row">
-        <div class="cms-row-info">
+        <div class="cms-row-top">
           <img src="${cover}" alt="" class="cms-row-thumb">
-          <div>
+          <div class="cms-row-text">
             <div class="cms-row-title">${escapeHtml(alb.title)}</div>
-            <div class="cms-row-sub">${escapeHtml(alb.category)} • ${alb.photos.length} Fotoğraf</div>
+            <div class="cms-row-sub">
+              <span class="cms-cat-badge">${escapeHtml(alb.category)}</span>
+              <span class="cms-count-badge">${alb.photos.length} Fotoğraf</span>
+            </div>
           </div>
         </div>
-        <div class="cms-row-actions">
-          <button type="button" class="btn-cms-mini" onclick="moveAlbumOrder(${idx}, -1)" ${idx === 0 ? 'disabled' : ''} title="Yukarı Taşı">↑</button>
-          <button type="button" class="btn-cms-mini" onclick="moveAlbumOrder(${idx}, 1)" ${idx === state.albums.length - 1 ? 'disabled' : ''} title="Aşağı Taşı">↓</button>
-          <button type="button" class="btn-cms-mini blue" onclick="jumpToEditAlbum('${alb.id}')">Fotoğrafları Yönet</button>
-          <button type="button" class="btn-cms-mini danger" onclick="deleteAlbumItem('${alb.id}')">Sil</button>
+        <div class="cms-row-bottom">
+          <div class="cms-order-group">
+            <button type="button" class="btn-cms-order" onclick="moveAlbumOrder(${idx}, -1)" ${idx === 0 ? 'disabled' : ''} title="Yukarı Taşı">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+              <span>Yukarı</span>
+            </button>
+            <button type="button" class="btn-cms-order" onclick="moveAlbumOrder(${idx}, 1)" ${idx === state.albums.length - 1 ? 'disabled' : ''} title="Aşağı Taşı">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              <span>Aşağı</span>
+            </button>
+          </div>
+          <div class="cms-action-group">
+            <button type="button" class="btn-cms-mini blue" onclick="jumpToEditAlbum('${alb.id}')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              <span>Fotoğrafları Yönet</span>
+            </button>
+            <button type="button" class="btn-cms-mini danger" onclick="deleteAlbumItem('${alb.id}')" title="Albümü Sil">
+              Sil
+            </button>
+          </div>
         </div>
       </div>
     `;
@@ -2362,15 +2380,21 @@ function renderCMSVideosList() {
 
   listEl.innerHTML = state.videos.map((v, idx) => `
     <div class="cms-list-row">
-      <div class="cms-row-info">
-        <img src="${v.poster}" alt="" class="cms-row-thumb">
-        <div>
+      <div class="cms-row-top">
+        <img src="${v.poster}" alt="" class="cms-row-thumb video-ratio">
+        <div class="cms-row-text">
           <div class="cms-row-title">${escapeHtml(v.title)}</div>
-          <div class="cms-row-sub">${escapeHtml(v.category || 'Prodüksiyon')} • Video #${idx + 1}</div>
+          <div class="cms-row-sub">
+            <span class="cms-cat-badge">${escapeHtml(v.category || 'Prodüksiyon')}</span>
+            <span class="cms-count-badge">Video #${idx + 1}</span>
+          </div>
         </div>
       </div>
-      <div class="cms-row-actions">
-        <button type="button" class="btn-cms-mini danger" onclick="deleteVideoItem('${v.id}')">Sil</button>
+      <div class="cms-row-bottom">
+        <div></div>
+        <div class="cms-action-group">
+          <button type="button" class="btn-cms-mini danger" onclick="deleteVideoItem('${v.id}')">Sil</button>
+        </div>
       </div>
     </div>
   `).join('');
