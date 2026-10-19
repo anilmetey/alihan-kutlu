@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Alihan Kutlu | Photo Media Works — Lal Fotoğrafçılık & Prodüksiyon</title>
+  <meta name="description" content="Alihan Kutlu — Lal Fotoğrafçılık Bilişim Prodüksiyon Turizm Reklam ve Tanıtım Hizmetleri Ltd. Şti. Kurumsal Portre, Ürün & Sanayi, Etkinlik, Moda, Video ve Düğün Portfolyosu.">
+  <meta name="theme-color" content="#09090b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <!-- ============================================================== -->
+    <!-- ÜST BAR (KURUMSAL KİMLİK & ANA GEZİNME)                        -->
+    <!-- ============================================================== -->
+    <header class="top-header">
+      <div class="header-row">
+        <div class="brand-block" onclick="switchMainView('albums')">
+          <div class="brand-title-line">
+            <h1 class="brand-name">ALİHAN KUTLU</h1>
+            <span class="brand-sub-badge">PHOTO MEDIA WORKS</span>
+          </div>
+          <p class="brand-company">Lal Fotoğrafçılık Bilişim Prodüksiyon Ltd. Şti.</p>
+        </div>
+
+        <div class="header-actions">
+          <button class="btn-header-cms" id="btnOpenCMS" title="İçerik Yönetim Paneli">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <span>Yönetim Paneli</span>
+          </button>
+          <a href="https://wa.me/905326358335?text=Merhaba%20Alihan%20Bey,%20portfolyonuzu%20inceledim,%20çekim%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="btn-header-wa">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.181-.077.355.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.102-.115.434-.506.55-.679.115-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.203c.044.073.044.419-.1 1.225z"/></svg>
+            <span>İletişim</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Telefon Galerisi Segment Bar (Albümler | Tüm Fotoğraflar | Videolar | Hakkında) -->
+      <nav class="ios-segmented-control" aria-label="Ana Bölümler">
+        <button class="seg-btn active" data-target="albums" onclick="switchMainView('albums')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+          <span>Albümler (<span id="badgeAlbumsCount">0</span>)</span>
+        </button>
+        <button class="seg-btn" data-target="allphotos" onclick="switchMainView('allphotos')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Tüm Fotoğraflar (<span id="badgePhotosCount">0</span>)</span>
+        </button>
+        <button class="seg-btn" data-target="videos" onclick="switchMainView('videos')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          <span>Videolar (<span id="badgeVideosCount">0</span>)</span>
+        </button>
+        <button class="seg-btn" data-target="about" onclick="switchMainView('about')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          <span>Ödüller & Hakkında</span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- ============================================================== -->
+    <!-- ANA İÇERİK ALANI                                               -->
+    <!-- ============================================================== -->
+    <main class="main-content">
+
+      <!-- ============================================================ -->
+      <!-- GÖRÜNÜM 1: ALBÜMLER (TELEFONDAKİ "ALBÜMLERİM" EKRANI)        -->
+      <!-- ============================================================ -->
+      <section id="viewAlbums" class="view-section active">
+        <div class="toolbar-row">
+          <div class="toolbar-left">
+            <h2 class="section-heading">Fotoğraf Albümleri</h2>
+            <span class="section-sub" id="albumsSubtitle">Kurumsal, Ürün, Moda, Etkinlik ve Özel Çekimler</span>
+          </div>
+          <div class="category-pills" id="albumCategoryFilter">
+            <button class="cat-pill active" data-cat="all">Tümü</button>
+            <button class="cat-pill" data-cat="Kurumsal & Portre">Kurumsal</button>
+            <button class="cat-pill" data-cat="Ürün & Endüstriyel">Ürün & Sanayi</button>
+            <button class="cat-pill" data-cat="Moda & Kreatif">Moda</button>
+            <button class="cat-pill" data-cat="Etkinlik & Konser">Etkinlik</button>
+            <button class="cat-pill" data-cat="Düğün">Düğün</button>
+          </div>
+        </div>
+
+        <div class="albums-grid" id="albumsGrid">
+          <!-- JS ile doldurulur -->
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- GÖRÜNÜM 2: ALBÜM İÇİ FOTOĞRAFLAR (TELEFON GALERİ IZGARASI)   -->
+      <!-- ============================================================ -->
+      <section id="viewAlbumDetail" class="view-section">
+        <div class="album-nav-bar">
+          <button class="btn-back-ios" onclick="closeAlbumDetail()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            <span>Albümler</span>
+          </button>
+
+          <div class="album-header-center">
+            <span class="album-cat-pill" id="openAlbumCategory">Kategori</span>
+            <h2 class="album-main-title" id="openAlbumTitle">Albüm Başlığı</h2>
+            <span class="album-photo-count" id="openAlbumCount">0 Fotoğraf</span>
+          </div>
+
+          <div class="album-view-tools">
+            <button class="tool-icon-btn" id="btnStartSlideshow" onclick="startAlbumSlideshow()" title="Slayt Gösterisini Başlat">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span>Slayt</span>
+            </button>
+            <div class="grid-density-switch" title="Izgara Boyutu">
+              <button class="density-btn active" data-density="square" onclick="setGridDensity('square')" title="Telefon Galerisi (Kare)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              </button>
+              <button class="density-btn" data-density="aspect" onclick="setGridDensity('aspect')" title="Orijinal Kadraj Oranı">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="8" rx="1"/><rect x="3" y="14" width="18" height="7" rx="1"/></svg>
+              </button>
+            </div>
+            <button class="tool-icon-btn admin-add-here" onclick="openCMSForCurrentAlbum()" title="Bu Albüme Fotoğraf Ekle">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span>Fotoğraf Ekle</span>
+            </button>
+          </div>
+        </div>
+
+        <p class="album-description-text" id="openAlbumDesc"></p>
+
+        <!-- Fotoğraflar Izgarası -->
+        <div class="phone-photo-grid density-square" id="albumPhotosGrid">
+          <!-- JS ile doldurulur -->
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- GÖRÜNÜM 3: TÜM FOTOĞRAFLAR (FİLM RULOSU / ARŞİV)             -->
+      <!-- ============================================================ -->
+      <section id="viewAllPhotos" class="view-section">
+        <div class="toolbar-row">
+          <div class="toolbar-left">
+            <h2 class="section-heading">Tüm Fotoğraflar (Film Rulosu)</h2>
+            <span class="section-sub">Tüm albümlerdeki seçilmiş kareler tek akışta</span>
+          </div>
+          <div class="category-pills" id="allPhotosFilter">
+            <button class="cat-pill active" data-rollcat="all">Tümü</button>
+            <button class="cat-pill" data-rollcat="Kurumsal & Portre">Kurumsal</button>
+            <button class="cat-pill" data-rollcat="Ürün & Endüstriyel">Ürün & Sanayi</button>
+            <button class="cat-pill" data-rollcat="Moda & Kreatif">Moda</button>
+            <button class="cat-pill" data-rollcat="Etkinlik & Konser">Etkinlik</button>
+            <button class="cat-pill" data-rollcat="Düğün">Düğün</button>
+          </div>
+        </div>
+
+        <div class="phone-photo-grid density-square" id="allPhotosGrid">
+          <!-- JS ile doldurulur -->
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- GÖRÜNÜM 4: VİDEOLAR GALERİSİ (23 GERÇEK VİDEO)               -->
+      <!-- ============================================================ -->
+      <section id="viewVideos" class="view-section">
+        <div class="toolbar-row">
+          <div class="toolbar-left">
+            <h2 class="section-heading">Video Galerisi & Prodüksiyon</h2>
+            <span class="section-sub">Tanıtım filmleri, etkinlik çekimleri, moda klipleri ve düğün hikayeleri</span>
+          </div>
+          <button class="tool-icon-btn admin-add-here" onclick="openCMS('addVideo')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span>Yeni Video Ekle</span>
+          </button>
+        </div>
+
+        <div class="videos-grid" id="videosGrid">
+          <!-- JS ile doldurulur -->
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- GÖRÜNÜM 5: HAKKINDA, ULUSLARARASI ÖDÜLLER & İLETİŞİM         -->
+      <!-- ============================================================ -->
+      <section id="viewAbout" class="view-section">
+        <div class="about-grid">
+          <div class="about-card main-bio">
+            <span class="eyebrow-tag">LAL FOTOĞRAFÇILIK BİLİŞİM PRODÜKSİYON LTD. ŞTİ.</span>
+            <h2>Alihan Kutlu</h2>
+            <p>
+              Türkiye’nin ilk dış mekan düğün fotoğrafçılarından Alihan Kutlu, 26 yılı aşkın tecrübesi ve katlanarak büyüyen fotoğraf tutkusuyla kurumsal portre, ürün/sanayi tanıtımı, etkinlik, moda ve özel gün fotoğrafçılığı alanlarında faaliyet göstermektedir.
+            </p>
+            <p>
+              Dünyaca ünlü fotoğraf sanatçılarından eğitim alan, uluslararası yarışmalarda (WPPI, WPE, Magic Lens) 13 gümüş madalya ve derece kazanan sanatçı; aynı zamanda Türkiye genelinde düzenlenen prestijli fotoğraf yarışmalarında jüri üyeliği yapmış ve yüzlerce fotoğrafçıya workshop eğitimleri vermiştir.
+            </p>
+
+            <div class="direct-contact-boxes">
+              <a href="tel:+905326358335" class="contact-card-item">
+                <span class="c-label">Türkiye İletişim & WhatsApp</span>
+                <strong>+90 532 635 83 35</strong>
+              </a>
+              <a href="tel:+4915753204402" class="contact-card-item">
+                <span class="c-label">Almanya / Avrupa Hattı</span>
+                <strong>+49 157 53204402</strong>
+              </a>
+              <a href="mailto:alihankutlu@gmail.com" class="contact-card-item">
+                <span class="c-label">E-posta</span>
+                <strong>alihankutlu@gmail.com</strong>
+              </a>
+              <a href="https://www.instagram.com/alihan_kutlu/" target="_blank" rel="noopener" class="contact-card-item">
+                <span class="c-label">Instagram</span>
+                <strong>@alihan_kutlu</strong>
+              </a>
+            </div>
+          </div>
+
+          <div class="about-card awards-box">
+            <span class="eyebrow-tag">ULUSLARARASI BAŞARILAR</span>
+            <h3>Ödüller (WPPI, WPE & Magic Lens)</h3>
+            <ul class="awards-list">
+              <li><strong>WPE 2019 First Place Silver Award</strong> — Pre-Wedding Groom Alone</li>
+              <li><strong>WPE 2019 Third Place Silver Award</strong> — Groom Alone Wedding Day</li>
+              <li><strong>WPE 2019 Silver Awards (4 Ayrı Ödül)</strong> — Wedding Details & Pre-Wedding Couple</li>
+              <li><strong>WPPI 2017 Annual Silver Award</strong> — Camera Artistry (Müdahalesiz RAW Format)</li>
+              <li><strong>Magic Lens Awards 2017</strong> — Annual Competition Winner</li>
+              <li><strong>WPPI 2016 Silver Awards (5 Ayrı Ödül)</strong> — Wedding Couple, Bride/Groom & Portrait</li>
+            </ul>
+
+            <h3 class="mt-20">Verdiği Eğitim & Workshoplar</h3>
+            <ul class="awards-list compact">
+              <li>İstanbul Fotoğrafçılar Odası — Modern Fotoğrafçılık Eğitimi</li>
+              <li>Photoplay Fotoğrafçılık Kursu (Master Eğitmen)</li>
+              <li>Nira Akademi Antalya & Akın Akademi İzmir Seminerleri</li>
+              <li>MWPPI Antalya & Bodrum Kampları (Master Eğitmen)</li>
+              <li>PDF Cunda, Antalya & Kuşadası Profesyonel Fotoğrafçılık Kampları</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============================================================== -->
+    <!-- KURUMSAL ALT BİLGİ                                             -->
+    <!-- ============================================================== -->
+    <footer class="app-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <strong>Lal Fotoğrafçılık Bilişim Prodüksiyon Turizm Reklam ve Tanıtım Hizmetleri Ltd. Şti.</strong>
+          <span>Alihan Kutlu • Photo Media Works • Tüm Hakları Saklıdır.</span>
+        </div>
+        <div class="footer-right">
+          <a href="https://www.instagram.com/alihan_kutlu/" target="_blank" rel="noopener">Instagram</a>
+          <span>•</span>
+          <a href="https://www.youtube.com/channel/UCrpE5rmw33m9a2vBDHEbDHw" target="_blank" rel="noopener">YouTube</a>
+          <span>•</span>
+          <a href="https://vimeo.com/user23363695" target="_blank" rel="noopener">Vimeo</a>
+          <span>•</span>
+          <a href="https://wa.me/905326358335" target="_blank" rel="noopener">+90 532 635 83 35</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================================== -->
+    <!-- MOBİL ALT SEKME ÇUBUĞU (TELEFON UYGULAMASI HİSSİ)              -->
+    <!-- ============================================================== -->
+    <nav class="mobile-bottom-nav" aria-label="Mobil Alt Menü">
+      <button class="m-nav-item active" data-mview="albums" onclick="switchMainView('albums')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+        <span>Albümler</span>
+      </button>
+      <button class="m-nav-item" data-mview="allphotos" onclick="switchMainView('allphotos')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Arşiv</span>
+      </button>
+      <button class="m-nav-item" data-mview="videos" onclick="switchMainView('videos')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <span>Videolar</span>
+      </button>
+      <button class="m-nav-item" data-mview="about" onclick="switchMainView('about')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        <span>Hakkında</span>
+      </button>
+      <button class="m-nav-item m-nav-cms" onclick="openCMS('manage')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <span>Panel</span>
+      </button>
+    </nav>
+
+  </div><!-- /.app-shell -->
+
+  <!-- ============================================================== -->
+  <!-- TAM EKRAN TELEFON FOTOĞRAF GÖRÜNTÜLEYİCİ (iOS PHOTOS VIEWER)   -->
+  <!-- ============================================================== -->
+  <div class="ios-photo-viewer hidden" id="iosPhotoViewer" role="dialog" aria-modal="true">
+    <div class="viewer-top-bar">
+      <button class="v-icon-btn" id="btnCloseViewer" title="Kapat (ESC veya Aşağı Kaydır)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>Geri</span>
+      </button>
+
+      <div class="viewer-center-info">
+        <strong id="viewerAlbumName">Albüm</strong>
+        <span id="viewerCounterText">1 / 25</span>
+      </div>
+
+      <div class="viewer-right-actions">
+        <button class="v-circle-btn" id="btnZoomToggle" title="Yakınlaştır / Uzaklaştır">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </button>
+        <button class="v-circle-btn" id="btnSlideshowToggle" title="Otomatik Slayt">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </button>
+        <a href="#" id="viewerWhatsAppBtn" target="_blank" rel="noopener" class="v-wa-pill">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.087-.179.181-.077.355.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.102-.115.434-.506.55-.679.115-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.203c.044.073.044.419-.1 1.225z"/></svg>
+          <span>Bilgi Al</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Dokunmatik Kaydırma Sahnesi (Swipe Left/Right & Pull-Down) -->
+    <div class="viewer-touch-stage" id="viewerTouchStage">
+      <button class="desktop-stage-arrow prev" id="btnStagePrev" aria-label="Önceki Fotoğraf">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+
+      <div class="viewer-img-wrapper" id="viewerImgWrapper">
+        <img src="" alt="" id="viewerMainImg" class="viewer-img-el" draggable="false">
+      </div>
+
+      <button class="desktop-stage-arrow next" id="btnStageNext" aria-label="Sonraki Fotoğraf">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <!-- Alt Film Şeridi (iPhone Fotoğraflar Thumbnail Scrubber) -->
+    <div class="viewer-bottom-scrubber">
+      <div class="scrubber-track" id="viewerScrubberTrack">
+        <!-- JS ile küçük kare önizlemeler dizilir -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- TAM EKRAN VİDEO OYNATICI (YOUTUBE & MP4 DESTEKLİ)              -->
+  <!-- ============================================================== -->
+  <div class="video-player-modal hidden" id="videoPlayerModal" role="dialog" aria-modal="true">
+    <div class="vp-backdrop" onclick="closeVideoPlayer()"></div>
+    <div class="vp-dialog">
+      <div class="vp-header">
+        <div class="vp-title-group">
+          <span class="vp-badge" id="vpCounterBadge">Video 1 / 23</span>
+          <h3 id="vpTitleText">Video Başlığı</h3>
+        </div>
+        <div class="vp-controls-top">
+          <button class="vp-nav-btn" onclick="prevVideoItem()" title="Önceki Video">‹ Önceki</button>
+          <button class="vp-nav-btn" onclick="nextVideoItem()" title="Sonraki Video">Sonraki ›</button>
+          <button class="vp-close-btn" onclick="closeVideoPlayer()" title="Kapat">&times;</button>
+        </div>
+      </div>
+
+      <div class="vp-stage" id="vpStageContainer">
+        <!-- JS ile YouTube iframe veya HTML5 video yerleştirilir -->
+      </div>
+
+      <div class="vp-footer">
+        <span class="vp-hint">Videolar arasında üstteki Önceki / Sonraki butonlarıyla geçiş yapabilirsiniz.</span>
+        <a href="https://wa.me/905326358335?text=Merhaba%20Alihan%20Bey,%20video%20prodüksiyon%20çalışmalarınız%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="vp-wa-btn">
+          Video Çekimi İçin Teklif Al
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- YÖNETİM PANELİ (CMS — ALİHAN BEY'İN İÇERİK YÖNETİM SİSTEMİ)     -->
+  <!-- ============================================================== -->
+  <div class="cms-modal hidden" id="cmsModal" role="dialog" aria-modal="true">
+    <div class="cms-backdrop" onclick="closeCMS()"></div>
+    <div class="cms-window">
+      <header class="cms-top-header">
+        <div>
+          <span class="cms-kicker">LAL PRODÜKSİYON YÖNETİM PANELİ</span>
+          <h2>Portfolyo & İçerik Yönetimi</h2>
+          <p>Webciye ihtiyaç duymadan yeni albüm oluşturun, mevcut albümlere fotoğraf yükleyin veya sıralamayı değiştirin.</p>
+        </div>
+        <button class="cms-close-x" onclick="closeCMS()">&times;</button>
+      </header>
+
+      <nav class="cms-tabs-bar">
+        <button class="cms-tab active" data-cmstab="manage" onclick="switchCMSTab('manage')">Albümleri & Sıralamayı Yönet</button>
+        <button class="cms-tab" data-cmstab="editAlbum" onclick="switchCMSTab('editAlbum')">Albüm İçine Fotoğraf Ekle / Sil</button>
+        <button class="cms-tab" data-cmstab="newAlbum" onclick="switchCMSTab('newAlbum')">+ Yeni Albüm Oluştur</button>
+        <button class="cms-tab" data-cmstab="addVideo" onclick="switchCMSTab('addVideo')">+ Video Ekle / Yönet</button>
+      </nav>
+
+      <div class="cms-body">
+
+        <!-- SEKME 1: ALBÜMLERİ SIRALA, DÜZENLE VEYA SİL -->
+        <div class="cms-pane active" id="cmsPaneManage">
+          <div class="cms-bar-info">
+            <span>Albümlerin vitrin sırasını <strong>↑ / ↓</strong> butonlarıyla değiştirebilir, içine fotoğraf ekleyebilir veya silebilirsiniz.</span>
+            <button class="btn-cms-reset" onclick="resetAllToOriginal()">Orijinal Site Verilerine Sıfırla</button>
+          </div>
+          <div class="cms-list" id="cmsAlbumsList">
+            <!-- JS ile doldurulur -->
+          </div>
+        </div>
+
+        <!-- SEKME 2: SEÇİLEN ALBÜMÜN İÇİNDEKİ FOTOĞRAFLARI YÖNET / YENİ FOTOĞRAF EKLE -->
+        <div class="cms-pane" id="cmsPaneEditAlbum">
+          <div class="cms-form-group">
+            <label for="selectAlbumToEdit">Düzenlenecek Albümü Seçin</label>
+            <select id="selectAlbumToEdit" onchange="renderSelectedAlbumEditor()"></select>
+          </div>
+
+          <div class="cms-upload-box" id="editAlbumDropzone">
+            <input type="file" id="editAlbumFileInput" accept="image/*" multiple class="hidden">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <p>Seçili albüme yeni fotoğraflar eklemek için buraya sürükleyin veya telefon/bilgisayarınızdan seçin</p>
+            <button type="button" class="btn-cms-secondary" onclick="document.getElementById('editAlbumFileInput').click()">+ Fotoğrafları Seç ve Anında Ekle</button>
+          </div>
+
+          <div class="cms-sub-header">
+            <span id="editAlbumPhotosCountLabel">Albümdeki Mevcut Fotoğraflar</span>
+            <small>Herhangi bir fotoğrafı albüm kapağı yapabilir veya silebilirsiniz.</small>
+          </div>
+          <div class="cms-photos-editor-grid" id="cmsAlbumPhotosEditorGrid">
+            <!-- JS ile doldurulur -->
+          </div>
+        </div>
+
+        <!-- SEKME 3: YENİ ALBÜM OLUŞTUR -->
+        <div class="cms-pane" id="cmsPaneNewAlbum">
+          <form id="formNewAlbum" class="cms-form">
+            <div class="cms-form-row">
+              <div class="cms-form-group">
+                <label for="newAlbumTitle">Yeni Albüm Adı *</label>
+                <input type="text" id="newAlbumTitle" placeholder="Örn: 2026 Kurumsal & Sanayi Çekimleri" required>
+              </div>
+              <div class="cms-form-group">
+                <label for="newAlbumCat">Kategori *</label>
+                <select id="newAlbumCat" required>
+                  <option value="Kurumsal & Portre">Kurumsal & Portre</option>
+                  <option value="Ürün & Endüstriyel">Ürün & Endüstriyel</option>
+                  <option value="Moda & Kreatif">Moda & Kreatif</option>
+                  <option value="Etkinlik & Konser">Etkinlik & Konser</option>
+                  <option value="Düğün">Düğün</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cms-form-group">
+              <label for="newAlbumDesc">Albüm Açıklaması (İsteğe Bağlı)</label>
+              <input type="text" id="newAlbumDesc" placeholder="Çekim konsepti, lokasyon veya kısa bilgi...">
+            </div>
+
+            <div class="cms-form-group">
+              <label>Albüm Fotoğrafları (Çoklu Seçim veya Sürükle-Bırak)</label>
+              <div class="cms-upload-box" id="newAlbumDropzone">
+                <input type="file" id="newAlbumFileInput" accept="image/*" multiple class="hidden">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <p>Fotoğrafları buraya bırakın veya cihazınızdan seçin</p>
+                <button type="button" class="btn-cms-secondary" onclick="document.getElementById('newAlbumFileInput').click()">Fotoğrafları Seç</button>
+              </div>
+              <div class="cms-staged-grid" id="newAlbumStagedGrid"></div>
+            </div>
+
+            <button type="submit" class="btn-cms-primary">Albümü Oluştur ve Yayına Al</button>
+          </form>
+        </div>
+
+        <!-- SEKME 4: VİDEO EKLE & YÖNET -->
+        <div class="cms-pane" id="cmsPaneAddVideo">
+          <form id="formNewVideo" class="cms-form mb-24">
+            <div class="cms-form-row">
+              <div class="cms-form-group">
+                <label for="newVideoTitle">Video Başlığı *</label>
+                <input type="text" id="newVideoTitle" placeholder="Örn: Kurumsal Tanıtım Filmi veya Düğün Klibi" required>
+              </div>
+              <div class="cms-form-group">
+                <label for="newVideoCat">Kategori</label>
+                <select id="newVideoCat">
+                  <option value="Tanıtım & Kurumsal">Tanıtım & Kurumsal</option>
+                  <option value="Moda & Klip">Moda & Klip</option>
+                  <option value="Etkinlik & Sahne">Etkinlik & Sahne</option>
+                  <option value="Düğün Hikayesi">Düğün Hikayesi</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cms-form-group">
+              <label for="newVideoUrl">YouTube Bağlantısı veya MP4 Video Linki *</label>
+              <input type="url" id="newVideoUrl" placeholder="Örn: https://youtu.be/C5mqwD0hq6U veya https://.../video.mp4" required>
+              <small class="form-help">YouTube linki yapıştırdığınızda kapak görseli otomatik olarak çekilir.</small>
+            </div>
+
+            <button type="submit" class="btn-cms-primary">Videoyu Galeride Yayınla</button>
+          </form>
+
+          <div class="cms-sub-header">
+            <span>Yayındaki Videolar (<span id="cmsVideoCountLabel">0</span>)</span>
+          </div>
+          <div class="cms-list" id="cmsVideosList">
+            <!-- JS ile doldurulur -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-msg hidden" id="toastMsg">İşlem tamamlandı</div>
+
+  <script src="app.js?v=3"></script>
+</body>
+</html>
