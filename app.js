@@ -1626,7 +1626,7 @@ function renderAlbumsGrid() {
 
         <div class="album-meta">
           <h3 class="album-title">${escapeHtml(album.title)}</h3>
-          <span class="album-count">${count} Fotoğraf • İncelemek için dokunun</span>
+          <span class="album-count">${count} Fotoğraf</span>
         </div>
       </article>
     `;
